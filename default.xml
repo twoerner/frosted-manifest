@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+    <default revision="master" sync-j="4"/>
+
+    <remote fetch="http://github.com/" name="github"/>
+    <remote fetch="http://github.com/insane-adding-machines/" name="frosted"/>
+    <remote fetch="git://crosstool-ng.org/" name="crosstool-ng"/>
+
+    <!-- utilities -->
+    <project remote="github" name="texane/stlink" path="toolchain/stlink"/>
+
+    <!-- toolchain -->
+    <project remote="crosstool-ng" name="crosstool-ng" path="toolchain/crosstool-ng"/>
+    <project remote="frosted" name="elf2flt" path="toolchain/elf2flt"/>
+    <project remote="frosted" name="newlib" path="toolchain/newlib" revision="frosted">
+        <linkfile src="../../.repo/manifests/ctng-custom-elf2flt.patch" dest="toolchain/ctng-custom-elf2flt.patch"/>
+        <linkfile src="../../.repo/manifests/arm-frosted-eabi.config.in" dest="toolchain/arm-frosted-eabi.config.in"/>
+        <linkfile src="../../.repo/manifests/buildtoolchain.sh" dest="buildtoolchain.sh"/>
+    </project>
+
+    <!-- kernel + userspace -->
+    <project remote="frosted" name="frosted" path="frosted"/>
+    <project remote="frosted" name="libopencm3.git" path="frosted/kernel/libopencm3"/>
+    <project remote="frosted" name="busybox.git" path="frosted/apps/busybox"/>
+    <project remote="frosted" name="picotcp" path="frosted/kernel/net/picotcp"/>
+    <project remote="frosted" name="frosted-userland.git" path="frosted/frosted-userland"/>
+
+</manifest>
