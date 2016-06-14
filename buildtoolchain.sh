@@ -1,4 +1,7 @@
 #!/bin/bash
+# Copyright 2016 Trevor Woerner
+# see LICENSE file in root directory
+
 unset LD_LIBRARY_PATH
 
 STARTDIR=$PWD
