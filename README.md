@@ -2,7 +2,7 @@ FROSTED repo manifest
 =====================
 
 Here are the setup scripts, patches, and manifest for building
-[frosted](https://hackerspace.be/FrostedOS).
+[frosted](http://github.com/insane-adding-machines/frosted)
 
 To get started you'll need the 'repo' tool:
 ```
