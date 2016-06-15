@@ -36,6 +36,16 @@ $ repo init -u http://github.com/twoerner/frosted-manifest.git -b master
 $ repo sync
 ```
 
+While performing the 'repo sync' you can safely ignore any messages that look
+something like:
+> curl: (22) The requested URL returned error: 404 Not Found
+> Server does not provide clone.bundle; ignoring.
+
+'repo' tries to find "clone bundles" on the server (which reduce download
+time). If it doesn't find any, it reports this to the user, but it's not
+fatal; clone bundles are not required for downloading, it will simply fall
+back to using a plain 'git clone'.
+
 A successful initialization will end with a message stating that 'repo' is
 initialized in your working directory. Note that, at this point, your working
 directory will only contain one hidden directory '.repo'. In order to pull the
