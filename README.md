@@ -108,3 +108,11 @@ $ make
 
 NOTE: using the '-j' option to 'make' to perform a parallel build is likely to
 not end in success.
+
+The 'stlink' utilities from https://github.com/texane/stlink were built as part
+of your toolchain build. If you are using a target that uses ST-LINK (i.e. the ST Discovery
+boards) you can use the 'st-flash' utility to flash the resulting 'image.bin'
+to your board:
+```
+# st-flash write image.bin 0x0800000
+```
