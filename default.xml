@@ -1,6 +1,3 @@
-<!-- Copyright 2016 Trevor Woerner -->
-<!-- see LICENSE file in root directory -->
-
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
     <default revision="stable" sync-j="4"/>
