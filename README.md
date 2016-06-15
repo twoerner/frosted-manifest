@@ -24,6 +24,11 @@ $ repo init -u http://github.com/twoerner/frosted-manifest.git -b stable
 
 If you are prompted, configure 'repo' with your real name and email address.
 
+Now you can pull the sources with:
+```
+$ repo sync
+```
+
 The 'repo' command has a '-b' option that lets you switch between different
 manifest branches (which then determines which branches of the corresponding
 repositories are pulled). In the above command you're being directed to use
