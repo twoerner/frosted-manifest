@@ -24,7 +24,10 @@ $ repo init -u http://github.com/twoerner/frosted-manifest.git -b stable
 
 If you are prompted, configure 'repo' with your real name and email address.
 
-Now you can pull the sources with:
+A successful initialization will end with a message stating that 'repo' is
+initialized in your working directory. Note that, at this point, your working
+directory will only contain one hidden directory '.repo'. In order to pull the
+sources (as specified in the manifest) to your working directory:
 ```
 $ repo sync
 ```
@@ -34,8 +37,8 @@ manifest branches (which then determines which branches of the corresponding
 repositories are pulled). In the above command you're being directed to use
 the 'stable' branch. If, after trying the 'stable' branch, you'd like to try
 the 'master' branch, for example, simply run the initialization again
-specifying the 'master' branch. If a branch is not specified, 'master' is
-assumed:
+specifying the 'master' branch, then 'sync' again. If a branch is not
+specified, 'master' is assumed:
 ```
 $ repo init -u http://github.com/twoerner/frosted-manifest.git -b master
 $ repo sync
@@ -51,11 +54,10 @@ time). If it doesn't find any, it reports this to the user, but it's not
 fatal; clone bundles are not required for downloading, it will simply fall
 back to using a plain 'git clone'.
 
-A successful initialization will end with a message stating that 'repo' is
-initialized in your working directory. Note that, at this point, your working
-directory will only contain one hidden directory '.repo'. In order to pull the
-sources (as specified in the manifest) to your working directory:
+If new updates of the various sub-repositories are available and you would
+like to update to the latest, simply:
 ```
+$ repo sync -dl
 $ repo sync
 ```
 
@@ -123,3 +125,11 @@ $ make
 
 NOTE: using the '-j' option to 'make' to perform a parallel build is likely to
 not end in success.
+
+The 'stlink' utilities from https://github.com/texane/stlink were built as part
+of your toolchain build. If you are using a target that uses ST-LINK (i.e. the ST Discovery
+boards) you can use the 'st-flash' utility to flash the resulting 'image.bin'
+to your board:
+```
+# st-flash write image.bin 0x0800000
+```
