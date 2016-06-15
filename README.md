@@ -54,6 +54,13 @@ time). If it doesn't find any, it reports this to the user, but it's not
 fatal; clone bundles are not required for downloading, it will simply fall
 back to using a plain 'git clone'.
 
+If new updates of the various sub-repositories are available and you would
+like to update to the latest, simply:
+```
+$ repo sync -dl
+$ repo sync
+```
+
 If downloading from behind a proxy (which is common in some corporate
 environments) it might be necessary to explicitly specify the proxy which is
 then used by repo:
