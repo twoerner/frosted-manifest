@@ -24,7 +24,10 @@ $ repo init -u http://github.com/twoerner/frosted-manifest.git -b stable
 
 If you are prompted, configure 'repo' with your real name and email address.
 
-Now you can pull the sources with:
+A successful initialization will end with a message stating that 'repo' is
+initialized in your working directory. Note that, at this point, your working
+directory will only contain one hidden directory '.repo'. In order to pull the
+sources (as specified in the manifest) to your working directory:
 ```
 $ repo sync
 ```
@@ -34,8 +37,8 @@ manifest branches (which then determines which branches of the corresponding
 repositories are pulled). In the above command you're being directed to use
 the 'stable' branch. If, after trying the 'stable' branch, you'd like to try
 the 'master' branch, for example, simply run the initialization again
-specifying the 'master' branch. If a branch is not specified, 'master' is
-assumed:
+specifying the 'master' branch, then 'sync' again. If a branch is not
+specified, 'master' is assumed:
 ```
 $ repo init -u http://github.com/twoerner/frosted-manifest.git -b master
 $ repo sync
@@ -50,14 +53,6 @@ something like:
 time). If it doesn't find any, it reports this to the user, but it's not
 fatal; clone bundles are not required for downloading, it will simply fall
 back to using a plain 'git clone'.
-
-A successful initialization will end with a message stating that 'repo' is
-initialized in your working directory. Note that, at this point, your working
-directory will only contain one hidden directory '.repo'. In order to pull the
-sources (as specified in the manifest) to your working directory:
-```
-$ repo sync
-```
 
 If downloading from behind a proxy (which is common in some corporate
 environments) it might be necessary to explicitly specify the proxy which is
