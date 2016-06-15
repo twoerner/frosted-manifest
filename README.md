@@ -43,7 +43,7 @@ $ repo sync
 
 While performing the 'repo sync' you can safely ignore any messages that look
 something like:
-> curl: (22) The requested URL returned error: 404 Not Found
+> curl: (22) The requested URL returned error: 404 Not Found  
 > Server does not provide clone.bundle; ignoring.
 
 'repo' tries to find "clone bundles" on the server (which reduce download
