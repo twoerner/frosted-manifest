@@ -45,6 +45,8 @@ if [ ! -f $STARTDIR/toolchain/x-tools/arm-frosted-eabi/bin/arm-frosted-eabi-gcc 
         else
             exit 1
         fi
+
+        echo "export FROSTED_KERNEL=$STARTDIR/frosted" >> $STARTDIR/env.frosted
     popd
 else
     echo "the frosted toolchain appears to have already been built"
